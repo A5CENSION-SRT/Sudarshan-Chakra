@@ -17,7 +17,7 @@ def store_data():
     while True:
         try:
             # 📖 Step 2: Open and read lines from the radar data file
-            with open("radar_data.txt", "r") as file:
+            with open("main/radar_data.txt", "r") as file:
                 lines = file.readlines()
 
             # Step 3: Process the latest line

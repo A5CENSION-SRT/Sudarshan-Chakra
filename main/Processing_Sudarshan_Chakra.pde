@@ -28,7 +28,7 @@ void setup() {
   // You might need to change "COM3" to the port your Arduino is on.
   // On MacOS/Linux, it will look like "/dev/tty.usbmodem...".
   printArray(Serial.list());
-  String portName = "COM6"; // <<< CHANGE THIS TO YOUR ARDUINO'S PORT
+  String portName = "COM3"; // <<< CHANGE THIS TO YOUR ARDUINO'S PORT
   myPort = new Serial(this, portName, 9600);
   
   // Tell Processing to buffer incoming data until it sees a newline character ('\n')
