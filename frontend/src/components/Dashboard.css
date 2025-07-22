@@ -1,11 +1,18 @@
 .dashboard {
   padding: 6rem 2rem 2rem;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(0, 255, 65, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(0, 255, 65, 0.1) 0%, transparent 50%),
+  background: radial-gradient(
+      circle at 20% 80%,
+      rgba(0, 255, 65, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(0, 255, 65, 0.1) 0%,
+      transparent 50%
+    ),
     linear-gradient(135deg, #0a0f0a 0%, #1a2f1a 50%, #0a0f0a 100%);
   min-height: 100vh;
-  font-family: 'Orbitron', monospace;
+  font-family: "Orbitron", monospace;
   color: #ffffff;
 }
 
@@ -87,12 +94,20 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .error-banner {
-  background: linear-gradient(135deg, rgba(255, 0, 0, 0.2) 0%, rgba(255, 0, 0, 0.1) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 0, 0, 0.2) 0%,
+    rgba(255, 0, 0, 0.1) 100%
+  );
   border: 1px solid rgba(255, 0, 0, 0.5);
   border-radius: 5px;
   padding: 1rem;
@@ -104,8 +119,13 @@
 }
 
 @keyframes errorPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.8; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }
 
 .bearing-radar-container {
@@ -129,7 +149,11 @@
   border: 2px solid #00ff41;
   border-radius: 50%;
   position: relative;
-  background: radial-gradient(circle, rgba(0, 255, 65, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 65, 0.1) 0%,
+    transparent 70%
+  );
   overflow: hidden;
 }
 
@@ -236,11 +260,12 @@
 }
 
 @keyframes bearingPulse {
-  0%, 100% { 
+  0%,
+  100% {
     transform: scale(1);
     box-shadow: 0 0 10px #00ff41;
   }
-  50% { 
+  50% {
     transform: scale(1.05);
     box-shadow: 0 0 20px #00ff41;
   }
@@ -299,11 +324,29 @@
   border-radius: 2px;
   transition: all 0.3s ease;
   cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0 1px;
 }
 
 .range-bar:hover {
   transform: scaleY(1.1);
   filter: brightness(1.2);
+}
+
+.range-bar.selected {
+  box-shadow: 0 0 14px #00ff41;
+  border: 2px solid #00ff41;
+}
+
+.range-value {
+  font-size: 0.75rem;
+  color: #ffffff;
+  text-shadow: 0 0 3px #000000;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 /* Previous Bearings Styles */
@@ -322,7 +365,7 @@
   display: flex;
   align-items: end;
   justify-content: space-between;
-  height: 25px;
+  height: 35px;
   gap: 2px;
   padding: 0 5px;
 }
@@ -333,11 +376,29 @@
   border-radius: 2px;
   transition: all 0.3s ease;
   cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0 1px;
 }
 
 .bearing-bar:hover {
   transform: scaleY(1.1);
   filter: brightness(1.2);
+}
+
+.bearing-bar.selected {
+  box-shadow: 0 0 14px #00ff41;
+  border: 2px solid #00ff41;
+}
+
+.bearing-value {
+  font-size: 0.75rem;
+  color: #ffffff;
+  text-shadow: 0 0 3px #000000;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 /* Ping Count Styles */
@@ -455,19 +516,22 @@
 
 .radar-canvas-dashboard {
   height: 500px;
-  background: linear-gradient(135deg, rgba(0, 255, 65, 0.05) 0%, rgba(0, 0, 0, 0.9) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 65, 0.05) 0%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
   border: 2px solid rgba(0, 255, 65, 0.3);
   border-radius: 15px;
   overflow: hidden;
   position: relative;
   margin-bottom: 2rem;
-  box-shadow: 
-    0 0 30px rgba(0, 255, 65, 0.2),
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.2),
     inset 0 0 50px rgba(0, 255, 65, 0.1);
 }
 
 .radar-canvas-dashboard::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
@@ -479,7 +543,7 @@
 }
 
 .radar-canvas-dashboard::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -491,18 +555,31 @@
 }
 
 @keyframes scanTop {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 @keyframes scanBottom {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes threatPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
 }
 
 .radar-cards {
@@ -513,7 +590,11 @@
 }
 
 .radar-card {
-  background: linear-gradient(135deg, rgba(0, 255, 65, 0.05) 0%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 65, 0.05) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
   border: 1px solid rgba(0, 255, 65, 0.2);
   border-radius: 10px;
   padding: 1.5rem;
@@ -524,19 +605,28 @@
 }
 
 .radar-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.4), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 65, 0.4),
+    transparent
+  );
   animation: scan 5s infinite;
 }
 
 @keyframes scan {
-  0% { left: -100%; }
-  100% { left: 100%; }
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 .radar-card:hover {
@@ -571,6 +661,7 @@
 
 .card-body {
   margin-bottom: 1.5rem;
+  min-height: 120px;
 }
 
 .main-value {
@@ -601,7 +692,11 @@
   border-radius: 50%;
   position: relative;
   margin: 1rem auto;
-  background: radial-gradient(circle, rgba(0, 255, 65, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 65, 0.1) 0%,
+    transparent 70%
+  );
 }
 
 .angle-pointer {
@@ -672,7 +767,11 @@
 }
 
 .grid-section {
-  background: linear-gradient(135deg, rgba(0, 255, 65, 0.05) 0%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 65, 0.05) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
   border: 1px solid rgba(0, 255, 65, 0.2);
   border-radius: 10px;
   padding: 1.5rem;
