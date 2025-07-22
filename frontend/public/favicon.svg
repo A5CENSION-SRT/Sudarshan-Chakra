@@ -1,0 +1,35 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2E7D32;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1B5E20;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="chakraGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF6F00;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Shield Background -->
+  <path d="M16 2 L24 6 L24 16 C24 22 16 30 16 30 C16 30 8 22 8 16 L8 6 Z" 
+        fill="url(#shieldGradient)" 
+        stroke="#2E7D32" 
+        stroke-width="0.5"/>
+  
+  <!-- Chakra Symbol -->
+  <g transform="translate(16,14)">
+    <!-- Main disc -->
+    <circle cx="0" cy="0" r="6" fill="url(#chakraGradient)" stroke="#FF8F00" stroke-width="0.5"/>
+    
+    <!-- Simplified spikes -->
+    <polygon points="0,-7 0.7,-5 0,-4.5 -0.7,-5" fill="#FFD700" transform="rotate(0)"/>
+    <polygon points="0,-7 0.7,-5 0,-4.5 -0.7,-5" fill="#FFD700" transform="rotate(90)"/>
+    <polygon points="0,-7 0.7,-5 0,-4.5 -0.7,-5" fill="#FFD700" transform="rotate(180)"/>
+    <polygon points="0,-7 0.7,-5 0,-4.5 -0.7,-5" fill="#FFD700" transform="rotate(270)"/>
+    
+    <!-- Center -->
+    <circle cx="0" cy="0" r="2" fill="#FFFFFF" stroke="#FF8F00" stroke-width="0.5"/>
+    <text x="0" y="0.5" font-family="Arial, sans-serif" font-size="1.5" fill="#FF8F00" text-anchor="middle" font-weight="bold">SC</text>
+  </g>
+</svg>
