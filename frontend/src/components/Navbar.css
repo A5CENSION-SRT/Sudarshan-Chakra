@@ -1,240 +1,143 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+/* Main Navbar Styling */
 .navbar {
-  background: linear-gradient(135deg, #0a0f0a 0%, #1a2f1a 50%, #0a0f0a 100%);
-  border-bottom: 2px solid #00ff41;
-  padding: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 20px rgba(0, 255, 65, 0.3);
+    background-color: #090e09; /* Deep, dark green-black background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes brand to left and the rest to the center/right */
+    padding: 8px 25px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.15);
+    font-family: 'Orbitron', sans-serif;
 }
 
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
+/* Left side: Brand Icon and Text */
 .navbar-brand {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.brand-icon {
-  color: #00ff41;
-  width: 2rem;
-  height: 2rem;
-  filter: drop-shadow(0 0 10px #00ff41);
+.brand-icon { /* This would style your <Shield /> icon */
+    color: #00ff41;
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0 0 8px rgba(0, 255, 65, 0.7));
 }
 
 .brand-text {
-  font-family: 'Orbitron', monospace;
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #00ff41;
-  text-shadow: 0 0 10px #00ff41;
-  letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #00ff41;
+    text-shadow: 0 0 8px rgba(0, 255, 65, 0.7);
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-.classification {
-  background: #ff0000;
-  color: white;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.7rem;
-  font-weight: bold;
-  border-radius: 3px;
-  margin-left: 1rem;
-  animation: blink 2s infinite;
+.brand-classification {
+    background-color: #c00;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 11px;
+    font-weight: 900;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0.7; }
+/* Center group for navigation links and status */
+.navbar-center-group {
+    display: flex;
+    align-items: center;
+    gap: 24px;
 }
 
-.navbar-links {
-  display: flex;
-  gap: 2rem;
-}
-
+/* General styles for nav links */
 .nav-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #a0a0a0;
-  text-decoration: none;
-  font-family: 'Orbitron', monospace;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
 }
 
-.nav-link:hover,
-.nav-link.active {
-  color: #00ff41;
-  border-color: #00ff41;
-  background: rgba(0, 255, 65, 0.1);
-  text-shadow: 0 0 5px #00ff41;
+.nav-icon { /* This styles all your nav icons */
+    width: 18px;
+    height: 18px;
 }
 
-.nav-icon {
-  width: 1.2rem;
-  height: 1.2rem;
+/* Specific styling for the 'DASHBOARD' link */
+.dashboard-link {
+    color: #00ff41;
+    padding: 8px 14px;
+    border: 2px solid #00ff41;
+    border-radius: 5px;
+    background-color: rgba(0, 255, 65, 0.1);
+    box-shadow: 0 0 12px rgba(0, 255, 65, 0.6), inset 0 0 8px rgba(0, 255, 65, 0.3);
 }
 
+.dashboard-link:hover, .dashboard-link.active {
+    box-shadow: 0 0 18px rgba(0, 255, 65, 0.8), inset 0 0 12px rgba(0, 255, 65, 0.5);
+    background-color: rgba(0, 255, 65, 0.2);
+}
+
+.dashboard-icon {
+    color: #00ff41; 
+}
+
+/* Specific styling for the plain 'CLASSIFIED' link */
+.classified-link {
+    color: rgba(200, 225, 200, 0.7); /* Dimmer green/gray color */
+}
+
+.classified-link:hover, .classified-link.active {
+    color: #00ff41;
+}
+
+/* System Status Indicator */
 .navbar-status {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .status-indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
+    width: 10px;
+    height: 10px;
+    background-color: #00ff41;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00ff41, 0 0 12px #00ff41;
+    animation: pulse-green 2s infinite;
 }
 
-.status-indicator.online {
-  background: #00ff41;
-  box-shadow: 0 0 10px #00ff41;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.2); opacity: 0.7; }
-  100% { transform: scale(1); opacity: 1; }
+@keyframes pulse-green {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 8px #00ff41, 0 0 12px #00ff41;
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 12px #00ff41, 0 0 18px #00ff41;
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 8px #00ff41, 0 0 12px #00ff41;
+    }
 }
 
 .status-text {
-  font-family: 'Orbitron', monospace;
-  color: #00ff41;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-.mobile-menu-toggle {
-  display: none;
-  background: none;
-  border: 1px solid #00ff41;
-  color: #00ff41;
-  padding: 0.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.mobile-menu-toggle:hover {
-  background: rgba(0, 255, 65, 0.1);
-}
-
-.menu-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-/* Mobile Responsive Styles */
-@media (max-width: 768px) {
-  .navbar-container {
-    padding: 1rem;
-    flex-wrap: wrap;
-    position: relative;
-  }
-
-  .navbar-brand {
-    flex: 1;
-  }
-
-  .brand-text {
-    font-size: 1rem;
-  }
-
-  .classification {
-    font-size: 0.6rem;
-    padding: 0.2rem 0.4rem;
-    margin-left: 0.5rem;
-  }
-
-  .mobile-menu-toggle {
-    display: block;
-    order: 2;
-  }
-
-  .navbar-links {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: linear-gradient(135deg, #0a0f0a 0%, #1a2f1a 50%, #0a0f0a 100%);
-    border-top: 1px solid #00ff41;
-    border-bottom: 2px solid #00ff41;
-    box-shadow: 0 4px 20px rgba(0, 255, 65, 0.3);
-    z-index: 1000;
-  }
-
-  .navbar-links.mobile-open {
-    display: flex;
-  }
-
-  .nav-link {
-    width: 100%;
-    padding: 1rem;
-    border-bottom: 1px solid rgba(0, 255, 65, 0.2);
-    justify-content: center;
-  }
-
-  .nav-link:last-child {
-    border-bottom: none;
-  }
-
-  .navbar-status {
-    order: 3;
-    margin-left: auto;
-  }
-
-  .status-text {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar-container {
-    padding: 0.75rem;
-  }
-
-  .brand-text {
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-  }
-
-  .classification {
-    display: none;
-  }
-
-  .brand-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  .status-text {
-    display: none;
-  }
-
-  .navbar-status {
-    display: flex;
-    align-items: center;
-  }
+    font-weight: 700;
+    font-size: 14px;
+    color: #00ff41;
+    text-transform: uppercase;
 }

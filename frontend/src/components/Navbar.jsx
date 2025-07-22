@@ -1,55 +1,52 @@
-import { Link, useLocation } from 'react-router-dom'
-import { Radar, Shield, Target, Lock, Menu, X } from 'lucide-react'
-import { useState } from 'react'
-import './Navbar.css'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import './Navbar.css'; // Import the corresponding CSS file
+
+// Using Font Awesome for icons is a common practice in React
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShieldHalved, faCrosshairs, faLock } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
-  const location = useLocation()
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
-
   return (
     <nav className="navbar">
-      <div className="navbar-container">
-        <div className="navbar-brand">
-          <Shield className="brand-icon" />
-          <span className="brand-text">SUDARSHAN CHAKRA</span>
-          <span className="classification">CLASSIFIED</span>
-        </div>
+      {/* Left-aligned brand section */}
+      <div className="navbar-brand">
+        <FontAwesomeIcon icon={faShieldHalved} className="brand-icon" />
+        <span className="brand-text">SUDARSHAN CHAKRA</span>
+        <span className="brand-classification">CLASSIFIED</span>
+      </div>
+    
+      {/* Center-aligned navigation and status */}
+      <div className="navbar-center-group">
+        {/* NavLink will automatically apply an 'active' class when the path matches */}
+        <NavLink 
+          to="/" 
+          end // Use 'end' to prevent this from matching all child routes
+          className={({ isActive }) => 
+            "nav-link dashboard-link" + (isActive ? " active" : "")
+          }
+        >
+          <FontAwesomeIcon icon={faCrosshairs} className="nav-icon dashboard-icon" />
+          DASHBOARD
+        </NavLink>
         
-        <button className="mobile-menu-toggle" onClick={toggleMenu}>
-          {isMenuOpen ? <X className="menu-icon" /> : <Menu className="menu-icon" />}
-        </button>
-
-        <div className={`navbar-links ${isMenuOpen ? 'mobile-open' : ''}`}>
-          <Link 
-            to="/" 
-            className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <Target className="nav-icon" />
-            DASHBOARD
-          </Link>
-          <Link 
-            to="/classified" 
-            className={`nav-link ${location.pathname === '/classified' ? 'active' : ''}`}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <Lock className="nav-icon" />
-            CLASSIFIED
-          </Link>
-        </div>
-
+        <NavLink 
+          to="http://127.0.0.1:5000/dashboard_ai_agent" 
+          className={({ isActive }) => 
+            "nav-link classified-link" + (isActive ? " active" : "")
+          }
+        >
+          <FontAwesomeIcon icon={faLock} className="nav-icon" />
+          CLASSIFIED
+        </NavLink>
+        
         <div className="navbar-status">
-          <div className="status-indicator online"></div>
+          <div className="status-indicator"></div>
           <span className="status-text">SYSTEM ONLINE</span>
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
