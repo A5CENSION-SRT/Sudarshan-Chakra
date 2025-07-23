@@ -49,7 +49,7 @@ const RadarComponents = () => {
         <div className="component-items">
           <div className="component-item">
             <span className="component-label">ARDUINO UNO R3</span>
-            <span className="component-value">₹2,100</span>
+            <span className="component-value">₹350</span>
           </div>
           <div className="component-item description">
             <span className="component-description">
@@ -69,7 +69,7 @@ const RadarComponents = () => {
         <div className="component-items">
           <div className="component-item">
             <span className="component-label">HC-SR04 ULTRASONIC SENSOR</span>
-            <span className="component-value">₹295</span>
+            <span className="component-value">₹60</span>
           </div>
           <div className="component-item description">
             <span className="component-description">
@@ -90,9 +90,15 @@ const RadarComponents = () => {
         <div className="component-items">
           <div className="component-item">
             <span className="component-label">
-              SG90 SERVO MOTORS (x2) + 650NM LASER
+              SG90 SERVO MOTORS (x2)
             </span>
-            <span className="component-value">₹1,680</span>
+            <span className="component-value">₹152</span>
+          </div>
+          <div className="component-item">
+            <span className="component-label">
+              650NM LASER MODULE
+            </span>
+            <span className="component-value">₹15</span>
           </div>
           <div className="component-item description">
             <span className="component-description">
@@ -112,27 +118,24 @@ const RadarComponents = () => {
         </div>
       </div>
 
-      <div className="component-section total-cost">
-        <h3>TOTAL SYSTEM COST</h3>
+      <div className="component-section individual-costs">
+        <h3>INDIVIDUAL COMPONENT COSTS</h3>
         <div className="component-items">
-          <div className="component-item total">
-            <span className="component-label">COMPLETE DIY RADAR SYSTEM</span>
-            <span className="component-value total-price">₹4,075</span>
+          <div className="component-item">
+            <span className="component-label">SERVO MOTOR (EACH)</span>
+            <span className="component-value">₹76</span>
           </div>
-          <div className="component-item description">
-            <span className="component-description">
-              • Affordable educational radar system with real-time tracking
-            </span>
+          <div className="component-item">
+            <span className="component-label">ARDUINO UNO R3</span>
+            <span className="component-value">₹350</span>
           </div>
-          <div className="component-item description">
-            <span className="component-description">
-              • 30cm detection range with Arduino-based control
-            </span>
+          <div className="component-item">
+            <span className="component-label">LASER MODULE</span>
+            <span className="component-value">₹15</span>
           </div>
-          <div className="component-item description">
-            <span className="component-description">
-              • Includes all hardware components and laser targeting
-            </span>
+          <div className="component-item">
+            <span className="component-label">HC-SR04 ULTRASONIC</span>
+            <span className="component-value">₹60</span>
           </div>
         </div>
       </div>
