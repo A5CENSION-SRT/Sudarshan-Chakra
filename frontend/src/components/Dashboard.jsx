@@ -245,10 +245,10 @@ const Dashboard = () => {
     });
 
     setPingStats((prev) => {
-      const newPreviousRanges = [...prev.previousRanges, newDistance].slice(-3); // Keep only last 3 changed values
+      const newPreviousRanges = [...prev.previousRanges, newDistance].slice(-5); // Keep only last 5 changed values
       const newPreviousBearings = [...prev.previousBearings, newAngle].slice(
-        -3
-      ); // Keep only last 3 changed bearing values
+        -5
+      ); // Keep only last 5 changed bearing values
       const averageRange =
         newPreviousRanges.reduce((sum, range) => sum + range, 0) /
         newPreviousRanges.length;
@@ -521,7 +521,7 @@ const Dashboard = () => {
             {/* Previous bearings chart */}
             {pingStats.previousBearings.length > 0 && (
               <div className="previous-bearings">
-                <div className="bearings-label">Last 3 Changed Bearings:</div>
+                <div className="bearings-label">Last 5 Changed Bearings:</div>
                 <div className="bearings-chart">
                   {pingStats.previousBearings.map((bearing, index) => (
                     <div
@@ -614,7 +614,7 @@ const Dashboard = () => {
             {/* Previous ranges chart */}
             {pingStats.previousRanges.length > 0 && (
               <div className="previous-ranges">
-                <div className="ranges-label">Last 3 Changed Values:</div>
+                <div className="ranges-label">Last 5 Changed Values:</div>
                 <div className="ranges-chart">
                   {pingStats.previousRanges.map((range, index) => (
                     <div
