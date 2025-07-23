@@ -422,20 +422,18 @@ const Dashboard = () => {
           <div className="connection-status">
             {isConnected ? (
               <>
-                <Wifi className="status-icon online" /> 
+                <Wifi className="status-icon online" />
                 <span className="status-text">CONNECTED</span>
               </>
             ) : (
               <>
-                <WifiOff className="status-icon offline" /> 
+                <WifiOff className="status-icon offline" />
                 <span className="status-text">DISCONNECTED</span>
               </>
             )}
           </div>
           <div className="threat-level" style={{ borderColor: threat.color }}>
-            <span style={{ color: threat.color }}>
-              THREAT: {threat.level}
-            </span>
+            <span style={{ color: threat.color }}>THREAT: {threat.level}</span>
           </div>
         </div>
       </div>
