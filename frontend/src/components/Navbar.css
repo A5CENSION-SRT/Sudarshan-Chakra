@@ -141,3 +141,144 @@
     color: #00ff41;
     text-transform: uppercase;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 8px 15px;
+        flex-wrap: wrap;
+        min-height: 70px;
+    }
+
+    .navbar-brand {
+        gap: 8px;
+    }
+
+    .brand-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .brand-text {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    .brand-classification {
+        padding: 3px 6px;
+        font-size: 9px;
+    }
+
+    .navbar-center-group {
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .nav-link {
+        padding: 8px 12px;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .nav-icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .navbar-status {
+        gap: 6px;
+    }
+
+    .status-indicator {
+        width: 8px;
+        height: 8px;
+    }
+
+    .status-text {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 6px 10px;
+        flex-direction: column;
+        align-items: center;
+        min-height: 80px;
+    }
+
+    .navbar-brand {
+        gap: 6px;
+        margin-bottom: 8px;
+    }
+
+    .brand-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .brand-text {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+
+    .brand-classification {
+        padding: 2px 5px;
+        font-size: 8px;
+    }
+
+    .navbar-center-group {
+        gap: 8px;
+        justify-content: center;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .nav-link {
+        padding: 6px 10px;
+        font-size: 10px;
+        letter-spacing: 0.5px;
+    }
+
+    .nav-icon {
+        width: 12px;
+        height: 12px;
+    }
+
+    .status-text {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .navbar {
+        min-height: 90px;
+        padding: 5px;
+    }
+
+    .brand-text {
+        font-size: 11px;
+        letter-spacing: 0.3px;
+    }
+
+    .brand-classification {
+        padding: 2px 4px;
+        font-size: 7px;
+    }
+
+    .nav-link {
+        padding: 5px 8px;
+        font-size: 9px;
+    }
+
+    .navbar-center-group {
+        gap: 6px;
+    }
+
+    .status-text {
+        font-size: 9px;
+    }
+}
